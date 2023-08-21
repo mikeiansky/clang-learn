@@ -20,6 +20,7 @@ int main(){
     printf("&book[0] value %d\n", &books[0]);
     // 第二个地址里面的内容
     printf("*books+1 value %d\n", *(books+1));
+    printf("*books+1 svalue %s\n", *(books+1));
     printf("&book[1] value %d\n", &books[1]);
     printf("books[0] value %d\n", books[1]);
     for (int i=0;i<4;i++){
