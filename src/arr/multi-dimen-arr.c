@@ -24,7 +24,7 @@ int main() {
     printf("data[1][3] value is %d\n", data[1][3]);
 
     // 使用数组指针的方式来访问
-    printf("----------------\n");
+    printf("-------数组指针---------\n");
 
     int (*p)[4] = data;
     printf("data value is %d\n", data);
