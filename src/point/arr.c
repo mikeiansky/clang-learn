@@ -16,6 +16,8 @@ int main() {
     printf("i value is %d\n", i);
     printf("i++ value is %d\n", i++);
     printf("i value is %d\n", i);
+    printf("++i value is %d\n", ++i);
+    printf("i value after ++i is %d\n", i);
 
 
     return 0;

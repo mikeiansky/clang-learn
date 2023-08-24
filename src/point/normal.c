@@ -17,7 +17,7 @@ int main(){
     printf("i++ value is %d\n", i++);
     printf("i value is %d\n", i);
 
-    for (int j=0;j<0;j++) {
+    for (int j=0;j<1;j++) {
         // 这里会执行吗
         printf("j index %d value is %d\n", j, data[j]);
     }
