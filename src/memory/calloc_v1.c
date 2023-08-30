@@ -13,6 +13,7 @@ int main(){
     for (int i=0;i<size;i++) {
         printf("num[%d] value is %d\n", i, *(num+1));
     }
+    printf("","");
 
     free(num);
     
