@@ -4,6 +4,7 @@
 #include <error.h>
 
 struct Book {
+    // 这里定义超过50就会有问题，如果是40就没有问题
     char title[50];
     char *author;
     int price;
@@ -15,8 +16,6 @@ struct Book {
 int main(){
     printf("app start ... 1\n");
     struct Book book;
-    // 如果不做初始化，就会有问题，长度长了之后就会有问题
-    memset(book.title, 0, sizeof(book.title));
     strcpy(book.title ,"clang");
     book.author = calloc(32, sizeof(char));
     strcpy(book.author ,"kk and jj");
@@ -26,7 +25,7 @@ int main(){
     printf("book.price : %d\n", book.price);
 
     // 写文件阶段
-    FILE *file = fopen("BOOK-With-point-001.md", "w+");
+    FILE *file = fopen("BOOK-With-point-002.md", "w+");
     if (file == NULL) {
         int errornum = errno;        
         printf("open file error code : %d, msg : %s\n", errornum, strerror(errornum));
@@ -44,7 +43,7 @@ int main(){
     printf("complete write struct \n");
 
     // 写文件阶段
-    file = fopen("BOOK-With-point-001.md", "r+");
+    file = fopen("BOOK-With-point-002.md", "r+");
     if (file == NULL) {
         int errornum = errno;        
         printf("open file error code : %d, msg : %s\n", errornum, strerror(errornum));
@@ -55,7 +54,6 @@ int main(){
     printf("ready read book no point file \n");
 
     fread(rb->title, sizeof(rb->title), 1, file);
-    printf("current read position : %d\n", ftell(file));
     rb->author = calloc(author_length, sizeof(char));
     fread(rb->author, author_length, 1, file);
     fread(&rb->price, sizeof(rb->price), 1, file);
